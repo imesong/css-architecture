@@ -1,17 +1,17 @@
-# 8 simple rules for a robust, scalable CSS architecture
+# 构建健壮、可扩展 CSS 架构的8条简单原则
 
-### Translations
+## 翻译
 
 - [Português (Brasil)](https://medium.com/tableless/8-regras-simples-para-uma-arquitetura-css-robusta-e-escal%C3%A1vel-545c6dade170)
-- [Chinese](./README-zh.md)
+- [English](README.md)
 
-This is the manifest of things I've learned about managing CSS in large, complex web projects during my many years of professional web development. I've been asked about these things enough times that having a document to point to sounded like a good idea.
+这份清单总结了我在多年专业网页开发经验中学到的关于管理大型、复杂网络项目中 CSS 的经验。我被问及这些事情的次数够多，以至于有一个指向文档的想法听起来是个不错的主意。
 
-I've tried to keep the explanations short, but this is essentially the tl;dr:
+我尽量保持解释简短，但这本质上就是“太长，没读”的版本。
 
-- [8 simple rules for a robust, scalable CSS architecture](#8-simple-rules-for-a-robust-scalable-css-architecture)
-    - [Translations](#translations)
-  - [Introduction](#introduction)
+- [构建健壮、可扩展 CSS 架构的8条简单原则](#构建健壮可扩展-css-架构的8条简单原则)
+  - [翻译](#翻译)
+  - [介绍](#介绍)
   - [High-level goals](#high-level-goals)
   - [Concrete rules](#concrete-rules)
     - [1. Always prefer classes](#1-always-prefer-classes)
@@ -28,14 +28,14 @@ I've tried to keep the explanations short, but this is essentially the tl;dr:
   - [The End](#the-end)
   - [License](#license)
 
-## Introduction
+## 介绍
 
-If you're working with frontend applications, eventually you'll need to style things. And even though the state-of-the-art of frontend applications keeps blazing ahead, CSS is still the only way to style anything on the web (and lately, in some cases, [native applications too](https://facebook.github.io/react-native/)). There's two broad categories of styling solutions out there, namely:
+如果你正在处理前端应用程序，最终你将需要对其进行样式设置。尽管前端应用程序的技术不断发展，但 CSS 仍然是在网络上（最近甚至在一些情况下是在[本地应用程序中](https://facebook.github.io/react-native/)）样式化任何内容的唯一途径。目前有两种主要的样式解决方案，即：
 
-* CSS preprocessors, which have been around for ages (such as [SASS](http://sass-lang.com/), [LESS](http://lesscss.org/), and others)
-* CSS-in-JS libraries, which are a relatively new approach to styling (such as [free-style](https://github.com/blakeembrey/free-style), and [many others](https://github.com/MicheleBertoli/css-in-js))
+- CSS 预处理器，已经存在很长时间了（例如 [SASS](http://sass-lang.com/)、[LESS](http://lesscss.org/) 等）
+- CSS-in-JS 库，是一种相对较新的样式化方法（例如 [free-style](https://github.com/blakeembrey/free-style) 等）
 
-The choice between the two approaches is a topic for a separate article, and as usual, both have their pros and cons. That said, I'll be focusing on the former approach, and if you've chosen to go with the latter, this article will probably be a bit less interesting.
+选择两种方法之间的差异是另一篇文章的主题，通常来说，它们都有各自的优缺点。也就是说，我将专注于前一种方法，如果你选择了后一种方法，本文可能会稍显乏味。
 
 ## High-level goals
 
